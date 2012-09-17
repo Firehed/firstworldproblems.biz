@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Solve your first world problem</title>
+	</head>
+	<body>
+		<h1>What is your first world problem?</h1>
+		
+		<select id="problems" style="width: 200px">
+			<option></option>
+			<option value="taskrabbit">need someone to wait in line for me for iPhone 5</option>
+			<option value="instacart">Safeway is like 10min away, really can’t be fucked leaving my couch but I do need twinkies</option>
+			<option value="stuart">I need someone to make me tea</option>
+			<option value="lifx">want my house lights to change color when someone tweets</option>
+			<option value="elevationdock">I'm too lazy to use both of my hands to unplug my $400 cell phone</option>
+		</select>
+		<h2 id="spin" style="display:none">Redirecting...</h2>
+		<script>
+		var redirects = 
+		{ "taskrabbit":"http://taskrabbit.com/"
+		, "instacart":"http://instacart.com/"
+		, "stuart": "http://stuartkearney.com/"
+		, "lifx":"http://www.kickstarter.com/projects/limemouse/lifx-the-light-bulb-reinvented"
+		, "elevationdock":"http://elevationlab.com/"
+		};
+		var dropdown = document.getElementById("problems");
+		dropdown.onchange = function() {
+			document.getElementById('spin').style.display='block';
+			window.setTimeout(function() {
+				window.location.href=redirects[dropdown.value];
+			}, 3000);
+		};
+		</script>
+	</body>
+</html>
