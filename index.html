@@ -3,76 +3,132 @@
 
 <link href="ribbons.css" rel="stylesheet" type="text/css" />
 
-<style>
-	html {
-		margin: 0;
-		padding: 0;
-	}
-	body {
-		margin: auto;
-		width: 100%;
-		font-family: Helvetica, Arial, sans-serif;
-		color: #222;
-	}
-	#spin {
-		display: none;
-	}
-	#main.loading {
-		cursor: wait;
-	}
-	#main.loading #spin {
-		display: block;
-	}
-	header {
-		padding: 20pt 0;
-		background-color: #136F92;
-	}
-	article {
-		width: 640px;
-		margin: 0 auto;
-	}
-	h1 {
-		color: white;
-		width: 640px;
-		margin: 0 auto;
-		padding-left: 60pt;
-		font-size: 40pt;
-	}
-	h2 {
-		margin: 20pt 0;
-		line-height: 40pt;
-		font-size: 24pt;
-		color: #888;
-	}
-	select {
-		font-size: 12pt;
-		width: 100%;
-		padding: 10px 20px;
-		font-weight: bold;
-		color: #5A5A5A;
-	}
-</style>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-34880307-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 	<head>
+		<style>
+			@import url(http://fonts.googleapis.com/css?family=Cabin+Condensed:500);
+			html, body {
+				width: 100%;
+				height: 100%;
+			}
+			html {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				margin: auto;
+				width: 100%;
+				font-family: Helvetica, Arial, sans-serif;
+				color: #222;
+			}
+
+			body{
+			  overflow-x:hidden;
+			}
+
+			.ribbon{
+			  position: absolute;
+			  top:42px;
+			  width:200px;
+			  padding:1px 0;
+			  background:#000;
+			  color:#eee;
+
+			  -moz-box-shadow:0 0 10px rgba(0,0,0,0.5);
+			  -webkit-box-shadow:0 0 10px rgba(0,0,0,0.5);
+			  box-shadow:0 0 10px rgba(0,0,0,0.5);
+			}
+
+			.ribbon.right{
+			  right:-42px;
+			  -moz-transform:rotate(45deg);
+			  -webkit-transform:rotate(45deg);
+			  -o-transform:rotate(45deg);
+			  -ms-transform:rotate(45deg);
+			  transform:rotate(45deg);
+			}
+
+			.ribbon a, .ribbon a:active, .ribbon a:hover{
+			  display:block;
+			  padding:1px 0;
+			  height:24px;
+			  line-height:24px;
+
+			  color:inherit;
+			  text-align:center;
+			  text-decoration:none;
+			  font-family: 'Cabin Condensed', sans-serif;
+			  font-size:16px;
+			  font-weight:500;
+
+			  border:1px solid rgba(255,255,255,0.3);
+
+			  -moz-text-shadow:0 0 10px rgba(0,0,0,0.31);
+			  -webkit-text-shadow:0 0 10px rgba(0,0,0,0.31);
+			  text-shadow:0 0 10px rgba(0,0,0,0.31);
+			}
+
+			.ribbon.blue{
+			  background:#145;
+			}
+			#spin {
+				display: none;
+			}
+			#main.loading, #main.loading a, #main.loading select {
+				cursor: wait;
+			}
+			#main.loading #spin {
+				display: block;
+			}
+			header {
+				padding: 20pt 0;
+				background-color: #136F92;
+			}
+			article, h1 {
+				padding: 0 20pt;
+				max-width: 640px;
+				margin: 0 auto;
+			}
+			h1, h2 {
+				line-height: 40pt;
+			}
+			h1 {
+				color: white;
+				padding-left: 40pt;
+				font-size: 40pt;
+			}
+			h2 {
+				margin: 20pt 0;
+				font-size: 24pt;
+				color: #888;
+			}
+			select {
+				font-size: 12pt;
+				width: 100%;
+				padding: 10px 20px;
+				font-weight: bold;
+				color: #5A5A5A;
+			}
+		</style>
+
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-34880307-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
 		<meta charset="UTF-8" />
 		<title>Solve your first world problem</title>
 	</head>
 	<body id="main">
-		<div class="ribbon right blue">
-		  <a href="https://github.com/Firehed/firstworldproblems.biz">Fork me on GitHub</a>
+		<div id="fork" class="ribbon right blue">
+		  <a href="#">Fork me on GitHub</a>
 		</div>
 		<header>
 			<h1>Need a first world problem solved?</h1>
@@ -80,7 +136,7 @@
 		<article>
 			<h2>Silicon Valley has got you covered.</h2>
 			<select id="problems">
-				<option>What's your problem?</option>
+				<option value="select">What's your problem?</option>
 				<option value="http://instacart.com">Safeway is like 10min away, really can’t be fucked leaving my couch but I do need twinkies</option>
 				<option value="http://www.kickstarter.com/projects/limemouse/lifx-the-light-bulb-reinvented">I want my house lights to change color when someone tweets</option>
 				<option value="http://elevationlab.com">I'm too lazy to use both of my hands to unplug my $400 cell phone</option>
@@ -108,16 +164,23 @@
 				<option value="http://www.stumbleupon.com">I don’t want to choose what link to click on</option>
 				<option value="http://www.apple.com/ipod-nano/">My watch isnt a touchscreen</option>
 			</select>
-			<h2 id="spin">Redirecting...</h2>
+			<h2 id="spin"><img src="http://www.iab.net/extra/adquickref/spinnerLarge.gif" style="width: 25px; height: 25px; margin: 0 10px 0 0"></img>Redirecting...</h2>
 		</article>
 		<script>
-		var dropdown = document.getElementById("problems");
-		dropdown.onchange = function() {
-			document.getElementById('main').className='loading';
-			window.setTimeout(function() {
-				window.location.href=dropdown.value;
-			}, 3000);
-		};
+			var redirect = function(url) {
+        document.getElementById('main').className='loading';
+        window.setTimeout(function() {
+          window.location.href=url;
+        }, 3000);
+      }
+      var dropdown = document.getElementById("problems");
+      dropdown.onchange = function() {
+        redirect(dropdown.value);
+      };
+      var fork = document.getElementById("fork");
+      fork.onclick = function() {
+        redirect("https://github.com/Firehed/firstworldproblems.biz");
+      }
 		</script>
 	</body>
 </html>
