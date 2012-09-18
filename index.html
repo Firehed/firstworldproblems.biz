@@ -17,7 +17,7 @@
 	#spin {
 		display: none;
 	}
-	#main.loading {
+	#main.loading, #main.loading a, #main.loading select {
 		cursor: wait;
 	}
 	#main.loading #spin {
@@ -71,8 +71,8 @@
 		<title>Solve your first world problem</title>
 	</head>
 	<body id="main">
-		<div class="ribbon right blue">
-		  <a href="https://github.com/Firehed/firstworldproblems.biz">Fork me on GitHub</a>
+		<div id="fork" class="ribbon right blue">
+		  <a href="#">Fork me on GitHub</a>
 		</div>
 		<header>
 			<h1>Need a first world problem solved?</h1>
@@ -111,13 +111,20 @@
 			<h2 id="spin">Redirecting...</h2>
 		</article>
 		<script>
-		var dropdown = document.getElementById("problems");
-		dropdown.onchange = function() {
+		var redirect = function(url) {
 			document.getElementById('main').className='loading';
 			window.setTimeout(function() {
-				window.location.href=dropdown.value;
+				window.location.href=url;
 			}, 3000);
+		}
+		var dropdown = document.getElementById("problems");
+		dropdown.onchange = function() {
+			redirect(dropdown.value);
 		};
+		var fork = document.getElementById("fork");
+		fork.onclick = function() {
+			redirect("https://github.com/Firehed/firstworldproblems.biz");
+		}
 		</script>
 	</body>
 </html>
