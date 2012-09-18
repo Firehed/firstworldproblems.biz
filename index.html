@@ -1,6 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+	html {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		margin: auto;
+		width: 100%;
+		font-family: Helvetica, Arial, sans-serif;
+		color: #222;
+	}
+	header {
+		padding: 20pt 0;
+		background-color: #136F92;
+	}
+	article {
+		width: 640px;
+		margin: 0 auto;
+	}
+	h1 {
+		color: white;
+		width: 640px;
+		margin: 0 auto;
+		padding-left: 60pt;
+		font-size: 40pt;
+	}
+	h2 {
+		margin: 20pt 0;
+		line-height: 40pt;
+		font-size: 24pt;
+		color: #888;
+	}
+	select {
+		font-size: 12pt;
+		width: 100%;
+		padding: 10px 20px;
+	}
+</style>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -19,40 +58,43 @@
 		<title>Solve your first world problem</title>
 	</head>
 	<body>
-		<h1>Need a first world problem solved?</h1>
-		<h2>Silicon Valley has got you covered.</h2>
-		
-		<select id="problems" style="width: 200px">
-			<option></option>
-			<option value="http://instacart.com">Safeway is like 10min away, really can’t be fucked leaving my couch but I do need twinkies</option>
-			<option value="http://stuartkearney.com">I need someone to make me tea</option>
-			<option value="http://www.kickstarter.com/projects/limemouse/lifx-the-light-bulb-reinvented">I want my house lights to change color when someone tweets</option>
-			<option value="http://elevationlab.com">I'm too lazy to use both of my hands to unplug my $400 cell phone</option>
-			<option value="http://www.boostedboards.com/">Oh no, I need to use my legs to move my skateboard!</option>
-			<option value="http://www.BufferBox.com">I order too much stuff on Amazon and keep missing my new deliveries</option>
-			<option value="http://www.taskrabbit.com">I can’t be fucked waiting in line for the new iPhone 5</option>
-			<option value="http://www.vastrm.com/">My shirts I buy at the store are slightly too baggy</option>
-			<option value="http://imgfave.com/">No matter how hard I try I cannot share and discover amazing images!</option>
-			<option value="https://www.capography.com/">This excel sheet managing my cap table has 14 rows and I don’t know basic excel functions</option>
-			<option value="http://www.everyday.me/">Hrmm my Facebook, twitter and path accounts just don’t properly record my life, I wish I had a private "just for me" social network.</option>
-			<option value="http://www.RebelMouse.com">I just have too many social news feeds to keep track of!</option>
-			<option value="http://www.uber.com">Really can’t be fucked calling a cab and the yellow clashes with my shoes</option>
-			<option value="http://www.stamped.com">I really wish I knew what Ellen liked!</option>
-			<option value="http://www.jotly.co">WHY CAN'T I RATE THINGS</option>
-			<option value="http://www.instagram.com">I’m nostalgic for an era before I was born</option>
-			<option value="https://plus.google.com/+projectglass">I feel weird not looking at a computer constantly</option>
-			<option value="http://www.wepay.com">My friends owe me money</option>
-			<option value="http://www.wakemate.com/">I hate the sound of loud noises waking me up</option>
-			<option value="http://www.lockatron.com/">I really hate getting keys out of my pocket to own the door</option>
-			<option value="https://bu.mp">I can’t be fucked typing in someones contact details</option>
-			<option value="http://www.9gag.com">Everyone on reddit is too mean to me</option>
-			<option value="http://www.tumblr.com">I want to blog but I don't want to type anything</option>
-			<option value="http://www.app.net">I have $50</option>
-			<option value="http://www.klout.com">I need a number to validate my existence</option>
-			<option value="http://www.stumbleupon.com">I don’t want to choose what link to click on</option>
-			<option value="http://www.apple.com/ipod-nano/">My watch isnt a touchscreen</option>
-		</select>
-		<h2 id="spin" style="display:none">Redirecting...</h2>
+		<header>
+			<h1>Need a first world problem solved?</h1>
+		</header>
+		<article>
+			<h2>Silicon Valley has got you covered.</h2>
+			<select id="problems">
+				<option></option>
+				<option value="http://instacart.com">Safeway is like 10min away, really can’t be fucked leaving my couch but I do need twinkies</option>
+				<option value="http://stuartkearney.com">I need someone to make me tea</option>
+				<option value="http://www.kickstarter.com/projects/limemouse/lifx-the-light-bulb-reinvented">I want my house lights to change color when someone tweets</option>
+				<option value="http://elevationlab.com">I'm too lazy to use both of my hands to unplug my $400 cell phone</option>
+				<option value="http://www.boostedboards.com/">Oh no, I need to use my legs to move my skateboard!</option>
+				<option value="http://www.BufferBox.com">I order too much stuff on Amazon and keep missing my new deliveries</option>
+				<option value="http://www.taskrabbit.com">I can’t be fucked waiting in line for the new iPhone 5</option>
+				<option value="http://www.vastrm.com/">My shirts I buy at the store are slightly too baggy</option>
+				<option value="http://imgfave.com/">No matter how hard I try I cannot share and discover amazing images!</option>
+				<option value="https://www.capography.com/">This excel sheet managing my cap table has 14 rows and I don’t know basic excel functions</option>
+				<option value="http://www.everyday.me/">Hrmm my Facebook, twitter and path accounts just don’t properly record my life, I wish I had a private "just for me" social network.</option>
+				<option value="http://www.RebelMouse.com">I just have too many social news feeds to keep track of!</option>
+				<option value="http://www.uber.com">Really can’t be fucked calling a cab and the yellow clashes with my shoes</option>
+				<option value="http://www.stamped.com">I really wish I knew what Ellen liked!</option>
+				<option value="http://www.jotly.co">WHY CAN'T I RATE THINGS</option>
+				<option value="http://www.instagram.com">I’m nostalgic for an era before I was born</option>
+				<option value="https://plus.google.com/+projectglass">I feel weird not looking at a computer constantly</option>
+				<option value="http://www.wepay.com">My friends owe me money</option>
+				<option value="http://www.wakemate.com/">I hate the sound of loud noises waking me up</option>
+				<option value="http://www.lockatron.com/">I really hate getting keys out of my pocket to own the door</option>
+				<option value="https://bu.mp">I can’t be fucked typing in someones contact details</option>
+				<option value="http://www.9gag.com">Everyone on reddit is too mean to me</option>
+				<option value="http://www.tumblr.com">I want to blog but I don't want to type anything</option>
+				<option value="http://www.app.net">I have $50</option>
+				<option value="http://www.klout.com">I need a number to validate my existence</option>
+				<option value="http://www.stumbleupon.com">I don’t want to choose what link to click on</option>
+				<option value="http://www.apple.com/ipod-nano/">My watch isnt a touchscreen</option>
+			</select>
+			<h2 id="spin" style="display:none">Redirecting...</h2>
+		</article>
 		<script>
 		var dropdown = document.getElementById("problems");
 		dropdown.onchange = function() {
