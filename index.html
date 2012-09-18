@@ -65,7 +65,7 @@
 		<section>
 			<h2>Silicon Valley has got you covered.</h2>
 			<select id="problems">
-				<option>What's your problem?</option>
+				<option value="select">What's your problem?</option>
 				<option value="http://instacart.com">Safeway is like 10min away, really can’t be fucked leaving my couch but I do need twinkies</option>
 				<option value="http://www.kickstarter.com/projects/limemouse/lifx-the-light-bulb-reinvented">I want my house lights to change color when someone tweets</option>
 				<option value="http://elevationlab.com">I'm too lazy to use both of my hands to unplug my $400 cell phone</option>
@@ -98,10 +98,12 @@
 		<script>
 			var dropdown = document.getElementById("problems");
 			dropdown.onchange = function() {
-				document.getElementById('spin').style.display='block';
-				window.setTimeout(function() {
-					window.location.href=dropdown.value;
-				}, 1000);
+				if (dropdown.value !== "select") {
+					document.getElementById('spin').style.display='block';
+					window.setTimeout(function() {
+						window.location.href=dropdown.value;
+					}, 1000);
+				}
 			};
 		</script>
 	</body>
