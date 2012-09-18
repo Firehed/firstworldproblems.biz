@@ -14,6 +14,15 @@
 		font-family: Helvetica, Arial, sans-serif;
 		color: #222;
 	}
+	#spin {
+		display: none;
+	}
+	#main.loading {
+		cursor: wait;
+	}
+	#main.loading #spin {
+		display: block;
+	}
 	header {
 		padding: 20pt 0;
 		background-color: #136F92;
@@ -61,9 +70,9 @@
 		<meta charset="UTF-8" />
 		<title>Solve your first world problem</title>
 	</head>
-	<body>
+	<body id="main">
 		<div class="ribbon right blue">
-		  <a href="<link to your repo>">Fork me on GitHub</a>
+		  <a href="https://github.com/Firehed/firstworldproblems.biz">Fork me on GitHub</a>
 		</div>
 		<header>
 			<h1>Need a first world problem solved?</h1>
@@ -99,12 +108,12 @@
 				<option value="http://www.stumbleupon.com">I don’t want to choose what link to click on</option>
 				<option value="http://www.apple.com/ipod-nano/">My watch isnt a touchscreen</option>
 			</select>
-			<h2 id="spin" style="display:none">Redirecting...</h2>
+			<h2 id="spin">Redirecting...</h2>
 		</article>
 		<script>
 		var dropdown = document.getElementById("problems");
 		dropdown.onchange = function() {
-			document.getElementById('spin').style.display='block';
+			document.getElementById('main').className='loading';
 			window.setTimeout(function() {
 				window.location.href=dropdown.value;
 			}, 3000);
