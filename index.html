@@ -1,61 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<style>
-	html {
-		margin: 0;
-		padding: 0;
-	}
-	body {
-		margin: auto;
-		width: 100%;
-		font-family: Helvetica, Arial, sans-serif;
-		color: #222;
-	}
-	header {
-		padding: 20pt 0;
-		background-color: #136F92;
-	}
-	article {
-		width: 640px;
-		margin: 0 auto;
-	}
-	h1 {
-		color: white;
-		width: 640px;
-		margin: 0 auto;
-		padding-left: 60pt;
-		font-size: 40pt;
-	}
-	h2 {
-		margin: 20pt 0;
-		line-height: 40pt;
-		font-size: 24pt;
-		color: #888;
-	}
-	select {
-		font-size: 12pt;
-		width: 100%;
-		padding: 10px 20px;
-		font-weight: bold;
-		color: #5A5A5A;
-	}
-</style>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-34880307-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 	<head>
+		<style>
+			html {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				margin: auto;
+				width: 100%;
+				font-family: Helvetica, Arial, sans-serif;
+				color: #222;
+			}
+			header {
+				padding: 20pt 0;
+				background-color: #136F92;
+			}
+			section {
+				width: 640px;
+				margin: 0 auto;
+			}
+			h1 {
+				color: white;
+				width: 640px;
+				margin: 0 auto;
+				padding-left: 60pt;
+				font-size: 40pt;
+			}
+			h2 {
+				margin: 20pt 0;
+				line-height: 40pt;
+				font-size: 24pt;
+				color: #888;
+			}
+			select {
+				font-size: 12pt;
+				width: 100%;
+				padding: 10px 20px;
+				font-weight: bold;
+				color: #5A5A5A;
+			}
+		</style>
+
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-34880307-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
 		<meta charset="UTF-8" />
 		<title>Solve your first world problem</title>
 	</head>
@@ -64,7 +61,7 @@
 		<header>
 			<h1>Need a first world problem solved?</h1>
 		</header>
-		<article>
+		<section>
 			<h2>Silicon Valley has got you covered.</h2>
 			<select id="problems">
 				<option>What's your problem?</option>
@@ -95,16 +92,16 @@
 				<option value="http://www.stumbleupon.com">I don’t want to choose what link to click on</option>
 				<option value="http://www.apple.com/ipod-nano/">My watch isnt a touchscreen</option>
 			</select>
-			<h2 id="spin" style="display:none">Redirecting...</h2>
-		</article>
+			<h2 id="spin" style="display:none"><img src="http://www.iab.net/extra/adquickref/spinnerLarge.gif" style="width: 25px; height: 25px; margin: 0 10px 0 0"></img>Redirecting...</h2>
+		</section>
 		<script>
-		var dropdown = document.getElementById("problems");
-		dropdown.onchange = function() {
-			document.getElementById('spin').style.display='block';
-			window.setTimeout(function() {
-				window.location.href=dropdown.value;
-			}, 3000);
-		};
+			var dropdown = document.getElementById("problems");
+			dropdown.onchange = function() {
+				document.getElementById('spin').style.display='block';
+				window.setTimeout(function() {
+					window.location.href=dropdown.value;
+				}, 1000);
+			};
 		</script>
 	</body>
 </html>
