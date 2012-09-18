@@ -20,53 +20,53 @@
 			}
 
 			body{
-			  overflow-x:hidden;
+				overflow-x:hidden;
 			}
 
 			.ribbon{
-			  position: absolute;
-			  top:42px;
-			  width:200px;
-			  padding:1px 0;
-			  background:#000;
-			  color:#eee;
+				position: absolute;
+				top:42px;
+				width:200px;
+				padding:1px 0;
+				background:#000;
+				color:#eee;
 
-			  -moz-box-shadow:0 0 10px rgba(0,0,0,0.5);
-			  -webkit-box-shadow:0 0 10px rgba(0,0,0,0.5);
-			  box-shadow:0 0 10px rgba(0,0,0,0.5);
+				-moz-box-shadow:0 0 10px rgba(0,0,0,0.5);
+				-webkit-box-shadow:0 0 10px rgba(0,0,0,0.5);
+				box-shadow:0 0 10px rgba(0,0,0,0.5);
 			}
 
 			.ribbon.right{
-			  right:-42px;
-			  -moz-transform:rotate(45deg);
-			  -webkit-transform:rotate(45deg);
-			  -o-transform:rotate(45deg);
-			  -ms-transform:rotate(45deg);
-			  transform:rotate(45deg);
+				right:-42px;
+				-moz-transform:rotate(45deg);
+				-webkit-transform:rotate(45deg);
+				-o-transform:rotate(45deg);
+				-ms-transform:rotate(45deg);
+				transform:rotate(45deg);
 			}
 
 			.ribbon a, .ribbon a:active, .ribbon a:hover{
-			  display:block;
-			  padding:1px 0;
-			  height:24px;
-			  line-height:24px;
+				display:block;
+				padding:1px 0;
+				height:24px;
+				line-height:24px;
 
-			  color:inherit;
-			  text-align:center;
-			  text-decoration:none;
-			  font-family: 'Cabin Condensed', sans-serif;
-			  font-size:16px;
-			  font-weight:500;
+				color:inherit;
+				text-align:center;
+				text-decoration:none;
+				font-family: 'Cabin Condensed', sans-serif;
+				font-size:16px;
+				font-weight:500;
 
-			  border:1px solid rgba(255,255,255,0.3);
+				border:1px solid rgba(255,255,255,0.3);
 
-			  -moz-text-shadow:0 0 10px rgba(0,0,0,0.31);
-			  -webkit-text-shadow:0 0 10px rgba(0,0,0,0.31);
-			  text-shadow:0 0 10px rgba(0,0,0,0.31);
+				-moz-text-shadow:0 0 10px rgba(0,0,0,0.31);
+				-webkit-text-shadow:0 0 10px rgba(0,0,0,0.31);
+				text-shadow:0 0 10px rgba(0,0,0,0.31);
 			}
 
 			.ribbon.blue{
-			  background:#145;
+				background:#145;
 			}
 			#spin {
 				display: none;
@@ -85,6 +85,11 @@
 				padding: 0 20pt;
 				max-width: 640px;
 				margin: 0 auto;
+			}
+			footer {
+				position: fixed;
+				bottom: 0;
+				right: 0;
 			}
 			h1, h2 {
 				line-height: 40pt;
@@ -110,15 +115,15 @@
 
 		<script type="text/javascript">
 
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-34880307-1']);
-		  _gaq.push(['_trackPageview']);
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-34880307-1']);
+			_gaq.push(['_trackPageview']);
 
-		  (function() {
+			(function() {
 			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+			})();
 
 		</script>
 		<meta charset="UTF-8" />
@@ -126,7 +131,7 @@
 	</head>
 	<body id="main">
 		<div id="fork" class="ribbon right blue">
-		  <a href="#">Fork me on GitHub</a>
+			<a href="#">Fork me on GitHub</a>
 		</div>
 		<header>
 			<h1>Need a first world problem solved?</h1>
@@ -164,6 +169,10 @@
 			</select>
 			<h2 id="spin"><img src="http://www.iab.net/extra/adquickref/spinnerLarge.gif" style="width: 25px; height: 25px; margin: 0 10px 0 0"></img>Redirecting...</h2>
 		</article>
+		<footer>
+			<a href="https://twitter.com/fwp_sv" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @fwp_sv</a>
+			<div class="fb-like" data-href="http://www.facebook.com/siliconvalleyproblems" data-send="false" data-layout="box_count" data-width="50" data-show-faces="true"></div>
+		</footer>
 		<script>
 			var redirect = function(url) {
 				document.getElementById('main').className='loading';
@@ -181,6 +190,17 @@
 			fork.onclick = function() {
 				redirect("https://github.com/Firehed/firstworldproblems.biz");
 			}
+		</script>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "http://connect.facebook.net/en_GB/all.js#xfbml=1&appId=139210299502278";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
 		</script>
 	</body>
 </html>
