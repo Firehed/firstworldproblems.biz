@@ -100,18 +100,25 @@
 				<option value="http://firstworldproblems.biz">I have first world problems</option>
 				<option value="http://www.stumbleupon.com">I don’t want to choose what link to click on</option>
 				<option value="http://www.apple.com/ipod-nano/">My watch isnt a touchscreen</option>
-
 			</select>
+
+			<button id="random">Solve a random problem...</button>
 			<h2 id="spin" style="display:none">Redirecting...</h2>
 		</article>
 		<script>
+		var dropdown = document.getElementById("random");
+		random.onclick = function() {
+			dropdown.value = dropdown.options[Math.floor(Math.random() * dropdown.options.length + 1)].value;
+			solveproblem();
+		};
 		var dropdown = document.getElementById("problems");
-		dropdown.onchange = function() {
+		dropdown.onchange = solveproblem();
+		function solveproblem(){
 			document.getElementById('spin').style.display='block';
 			window.setTimeout(function() {
 				window.location.href=dropdown.value;
 			}, 3000);
-		};
+		}
 		</script>
 	</body>
 </html>
