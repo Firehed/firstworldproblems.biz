@@ -184,10 +184,9 @@
 		<script>
 			var redirect = function(url) {
 				document.getElementById('main').className='loading';
-		                window.setTimeout(function() {
-		                    window.open(url, '_blank');
-		                    window.focus();
-		                }, 1000);
+				window.setTimeout(function() {
+					window.location.href=url;
+				}, 2000); //...Really, guys?
 			}
 			var dropdown = document.getElementById("problems");
 			dropdown.onchange = function() {
