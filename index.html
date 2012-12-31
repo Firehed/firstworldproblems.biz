@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<link rel="icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="chosen/chosen.css">
 		<style>
 			@import url(http://fonts.googleapis.com/css?family=Cabin+Condensed:500);
 			html, body {
@@ -105,11 +106,8 @@
 				color: #888;
 			}
 			select {
-				font-size: 12pt;
-				padding: 10px 20px;
-				font-weight: bold;
-				color: #5A5A5A;
-			}
+				font-size: 10pt;
+			} 
 		</style>
 
 		<script type="text/javascript">
@@ -137,8 +135,8 @@
 		</header>
 		<article>
 			<h2>Silicon Valley has got you covered.</h2>
-			<select id="problems">
-				<option value="select">What's your problem?</option>
+			<select id="problems" data-placeholder="What's your problem?">
+				<option value></option>
 				<option value="http://instacart.com">Safeway is a whole 10 minutes away, but I really need twinkies.</option>
 				<option value="http://www.kickstarter.com/projects/limemouse/lifx-the-light-bulb-reinvented">My house’s mood lighting doesn’t match all of my moods.</option>
 				<option value="http://slant.co">I like to rant on my opinions but nobody ever listens to me.</option>
@@ -151,7 +149,7 @@
 				<option value="https://www.capography.com/">Excel Functions? I'm still looking for a technical co-founder.</option>
 				<option value="http://www.everyday.me/">My social networking sites are too social.</option>
 				<option value="http://www.RebelMouse.com">I just have too many social networks for me to keep track of.</option>
-				<option value="http://www.uber.com">If I call a cab, I'd have to actually talk to someone, and yellow really clashes with my shoes.</option>
+				<option value="http://www.uber.com">I want to call a cab, but I don't want to have to talk to anyone my shoes.</option>
 				<option value="http://www.stamped.com">There are moments when I don’t know what celebrities all my friends are endorsing.</option>
 				<option value="http://www.jotly.co">Not all of my friends know what I think about everything all the time.</option>
 				<option value="http://www.instagram.com">I’m nostalgic for an era before I was born.</option>
@@ -165,10 +163,9 @@
 				<option value="http://www.app.net">I have $36.</option>
 				<option value="http://www.klout.com">I need a number to validate my existence.</option>
 				<option value="http://www.stumbleupon.com">I need entertainment, but deciding which link to click is difficult.</option>
-				<option value="https://www.wepay.com/donations/21290">I created a stupid website listing solutions to first-world problems and now I need a business model.</option>
 				<option value="http://www.kickstarter.com/projects/touchtime/touch-time-digital-watch-with-touch-screen">My watch doesn't have a touchscreen.</option>
 				<option value="http://trypitchbox.com">I'm a 3-month veteran startup ninja rockstar seeking my next 90-day engagement.</option>
-				<option value="http://getcoldturkey.com/">I spend too much time on social media sites, don't have enough willpower to stop, and am too lazy to edit my hosts file</option>
+				<option value="http://getcoldturkey.com/">I spend too much time on social media sites and am too lazy to edit my hosts file</option>
 				<option value="http://www.sparkology.com">I graduated from a top university but my high paying job makes it hard to find a girlfriend</option>
 			</select>
 			<h2 id="spin"><img src="http://www.iab.net/extra/adquickref/spinnerLarge.gif" style="width: 25px; height: 25px; margin: 0 10px 0 0"></img>Redirecting...</h2>
@@ -181,12 +178,15 @@
 			<div class="fb-like" data-href="http://www.facebook.com/siliconvalleyproblems" data-send="false" data-layout="box_count" data-width="50" data-show-faces="true"></div>
 
 		</footer>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/chosen/0.9.11/chosen.jquery.min.js"></script>
+		<script type="text/javascript">
+			$("#problems").chosen(); 
+		</script>
 		<script>
 			var redirect = function(url) {
 				document.getElementById('main').className='loading';
-				window.setTimeout(function() {
-					window.location.href=url;
-				}, 2000); //...Really, guys?
+				window.location.href=url;
 			}
 			var dropdown = document.getElementById("problems");
 			dropdown.onchange = function() {
